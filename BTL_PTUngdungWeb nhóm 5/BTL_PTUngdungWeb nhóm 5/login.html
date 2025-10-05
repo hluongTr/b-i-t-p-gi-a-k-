@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng Nhập - LuxuryCar</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">LUXURY GARAGE</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="gioithieu.html">Giới Thiệu</a></li>
+        <li><a href="sanpham.html">Sản Phẩm</a></li>
+        <li><a href="tintuc.html">Tin Tức</a></li>
+        <li><a href="lienhe.html">Liên Hệ</a></li>
+      </ul>
+    </nav>
+    <div class="user-actions">
+      <a href="search.html" title="Tìm Kiếm"><i class="fas fa-search"></i></a>
+      <a href="login.html" title="Đăng Nhập"><i class="fas fa-user"></i></a>
+      <a href="giohang.html" title="Giỏ Hàng"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </header>
+
+  <!-- login -->
+  <section class="login-section">
+    <div class="login-box" id="loginBox">
+      <h2>Đăng Nhập</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="username"><i class="fas fa-user"></i> Tài khoản</label>
+          <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required>
+        </div>
+        <div class="input-group">
+          <label for="password"><i class="fas fa-lock"></i> Mật khẩu</label>
+          <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+        </div>
+
+        <div class="remember-forgot">
+            <label><input type="checkbox"> Ghi nhớ tài khoản </label>
+               <p class="forgot-password-link"><a href="#">Quên mật khẩu?</a></p>
+        </div>
+        <button type="submit" class="btn-primary">Đăng Nhập</button>
+        <p class="register-link">Chưa có tài khoản? <a href="#" id="showRegisterForm">Đăng ký</a></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 LuxuryCar. Phát triển bởi Nhóm 5.</p>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

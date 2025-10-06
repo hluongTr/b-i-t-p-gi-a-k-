@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Xe | EliteCar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin-cars.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="admin-header">
+        <div class="logo"><i class="fas fa-car"></i> LUXURYCAR ADMIN</div>
+        <nav class="admin-nav">
+            <a href="admin-cars.html"><i class="fas fa-car"></i> Xe</a>
+            <a href="admin-orders.html"><i class="fas fa-shopping-cart"></i> Đơn Hàng</a>
+            <a href="admin-users.html"><i class="fas fa-users"></i> Khách Hàng</a>
+            <a href="index.html"><i class="fas fa-home"></i> Trang Chủ</a>
+        </nav>
+    </header>
+
+    <div class="admin-container">
+        <h1 class="section-title">Quản Lý Kho Xe</h1>
+
+        <div class="stats-bar">
+            <div class="stat-card">
+                <h3 id="totalCars">0</h3>
+                <p>Tổng Số Xe</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="availableCars">0</h3>
+                <p>Xe Còn Hàng</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="soldCars">0</h3>
+                <p>Xe Đã Bán</p>
+            </div>
+        </div>
+
+        <div class="action-bar">
+            <div class="search-box"> <!--btn-->
+                <input type="text" id="searchInput" placeholder="Tìm kiếm xe theo tên, hãng...">
+            </div>
+            <button class="btn-primary" onclick="openAddModal()">
+                <i class="fas fa-plus"></i> Thêm Xe Mới
+            </button>
+        </div>
+
+        <div class="cars-table"> <!--table-->
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Hình Ảnh</th>
+                        <th>Tên Xe</th>
+                        <th>Hãng</th>
+                        <th>Năm SX</th>
+                        <th>Giá (VNĐ)</th>
+                        <th>Trạng Thái</th>
+                        <th>Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody id="carTableBody">
+                    <!--Data thêm bằng JS(backend)-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- modal thêm/sửa Xe -->
+    <div id="carModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Thêm Xe Mới</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <!--Form nhập dữ liệu của xe-->
+            <form id="carForm">
+                <input type="hidden" id="carId">
+
+                <div class="form-group">
+                    <label for="carName">Tên Xe *</label>
+                    <input type="text" id="carName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="carBrand">Hãng Xe *</label>
+                    <select id="carBrand" required>
+                        <option value="">-- Chọn Hãng --</option>
+                        <option value="Ferrari">Ferrari</option>
+                        <option value="Lamborghini">Lamborghini</option>
+                        <option value="Porsche">Porsche</option>
+                        <option value="McLaren">McLaren</option>
+                        <option value="Bugatti">Bugatti</option>
+                        <option value="Aston Martin">Aston Martin</option>
+                        <option value="Rolls-Royce">Rolls-Royce</option>
+                        <option value="Bentley">Bentley</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="carYear">Năm Sản Xuất</label>
+                    <input type="number" id="carYear" min="2000" max="2025" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="carPrice">Giá (VNĐ)</label>
+                    <input type="number" id="carPrice" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="carPower">Công Suất </label>
+                    <input type="number" id="carPower" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="carImage">Hình Ảnh</label>
+                    <input type="text" id="carImage" placeholder="images/car.jpg">
+                </div>
+
+                <div class="form-group">
+                    <label for="carStatus">Trạng Thái</label>
+                    <select id="carStatus" required>
+                        <option value="available">Còn Hàng</option>
+                        <option value="sold">Đã Bán</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="carDescription">Mô Tả</label>
+                    <textarea id="carDescription" placeholder="Nhập mô tả chi tiết về xe..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-cancel" onclick="closeModal()">Hủy</button>
+                    <button type="submit" class="btn btn-save">
+                        <i class="fas fa-save"></i> Lưu Xe
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 LuxuryCar. Phát triển bởi Nhóm 5. </p>
+    </footer>
+    <script src="js/admin-cars.js"></script>
+</body>
+
+</html>
